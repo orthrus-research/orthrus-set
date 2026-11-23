@@ -1,0 +1,58 @@
+plugins {
+    id 'java-gradle-plugin'
+    id 'maven-publish'
+}
+
+// The version is the logic id: the tree id of this folder at the commit a landing named (set.json platform.logic).
+group = 'set'
+version = providers.gradleProperty('set.logic').getOrElse('dev')
+
+// Compiled for Java 17, the oldest JVM Gradle 9 runs on, by whatever JDK runs the build.
+tasks.withType(JavaCompile).configureEach { options.release = 17; options.encoding = 'UTF-8' }
+
+repositories { mavenCentral() }
+
+dependencies {
+    // The plugins themselves depend on nothing but Gradle; only their tests take JUnit.
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
+    testImplementation gradleTestKit()
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+gradlePlugin {
+    plugins {
+        base {
+            id = 'set.base'
+            implementationClass = 'set.SetBasePlugin'
+            displayName = 'set.base'
+            description = 'Reads the set a build resolves (set.json), gives projects set.jar, set.third, set.since and set.platform, and verifies every file it hands out by SHA-256.'
+        }
+        cleanroom {
+            id = 'set.cleanroom'
+            implementationClass = 'set.SetCleanroomPlugin'
+            displayName = 'set.cleanroom'
+            description = 'The convention for a Cleanroom mod built with CleanroomGradle: the set platform and reproducible archives.'
+        }
+    }
+}
+
+tasks.withType(AbstractArchiveTask).configureEach {
+    preserveFileTimestamps = false
+    reproducibleFileOrder = true
+}
+
+publishing {
+    repositories {
+        // Workbench publishes into the Store's plugins folder by logic id; by hand, into build/repo.
+        maven { url = providers.gradleProperty('set.publish').map { file(it) }.getOrElse(layout.buildDirectory.dir('repo').get().asFile) }
+    }
+}
+
+tasks.named('test', Test) {
+    useJUnitPlatform()
+    // The tests' folders live in the build folder: on Windows, a JAR on a compile classpath under the system's
+    // temporary folder fails Gradle's clean-up after javac with AccessDeniedException.
+    def scratch = layout.buildDirectory.dir('test-scratch')
+    systemProperty 'java.io.tmpdir', scratch.get().asFile.absolutePath
+    doFirst { scratch.get().asFile.mkdirs() }
+}

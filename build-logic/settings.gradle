@@ -1,0 +1,3 @@
+// The Set's Gradle plugins: set.base (a settings plugin every project's settings.gradle applies) and set.cleanroom.
+// Built by the Set's own check into the Store by logic id; a plain clone includes this build instead.
+rootProject.name = 'build-logic'
