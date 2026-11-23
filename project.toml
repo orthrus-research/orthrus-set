@@ -1,12 +1,23 @@
-# The Set's own checks. Workbench runs them from a clean clone; a landing that changes set.json passes them first.
+# The Set's own checks. Workbench runs them from a clean clone; a change to the Set's files passes them before it
+# lands, and the plugins the logic check packs go into the Store by logic id.
 schema = 1
-gate = ["schema"]  # above the first table: below one, TOML would put it in that table
+gate = ["schema", "logic"]  # above the first table: below one, TOML would put it in that table
 
 [project]
 name = "set"
+
+# The plugins as a Maven folder at the logic id (the tree id of build-logic/), packed into one file.
+[artifacts.plugins]
+check = "logic"
+file = "build-logic/build/set-plugins-*.zip"
 
 [checks.schema]
 description = "set.json holds to schema 1"
 inputs = ["set.json", "tools/check_set.py"]
 steps = [["{python}", "-B", "tools/check_set.py", "set.json"]]
 
+[checks.logic]
+description = "Build and test build-logic (set.base, set.cleanroom) and pack its plugins at the logic id"
+locks = ["gradle"]
+memory = 2
+steps = [["{python}", "-B", "tools/build_logic.py"]]
