@@ -110,7 +110,20 @@
   ],
   "logic": null
  },
- "holds": {},
+ "holds": {
+  "orthlib:cubature-adapter": {
+   "commit": "94e973db5c9c1d73bbee97b8deb1bafe4ce9ae70",
+   "artifacts": {
+    "cubature-adapter": {
+     "sha256": "a15dd81a3a0285fce22301fe6c7b325ca578abd56cebf17a7841a192e274273a",
+     "file": "orthlib-0.5.0-dev-cubature.jar"
+    }
+   },
+   "reason": "The exact adapter of OrthLib's T1 native qualification, built against Cubature c3e240d1 (a8709af5); held until it is requalified on current OrthLib and Cubature lines",
+   "since": "2026-11-23",
+   "source": "OrthLib 94e973db reobfCubatureJar, the owner's qualification copy"
+  }
+ },
  "doctor": {
   "exempt": [
    "evidence/**"
