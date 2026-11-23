@@ -44,6 +44,7 @@ class SetBaseTest {
                 "plugins { id 'java' }",
                 "dependencies { compileOnly set.jar('lib') }",
                 "tasks.register('where') { def f = set.jar('lib'); doLast { println 'lib=' + f.singleFile.name } }",
+                "tasks.register('digest') { def d = set.platformDigest; doLast { println 'digest=' + d } }",
                 ""));
         write(project.resolve("src/main/java/demo/A.java"), "package demo; class A {}\n");
     }
@@ -106,6 +107,13 @@ class SetBaseTest {
         writeSet(8);
         BuildResult refused = runner("help").buildAndFail();
         assertTrue(refused.getOutput().contains("Run Gradle on JDK 8"), refused.getOutput());
+    }
+
+    @Test
+    void thePlatformDigestFollowsThePlatformAlone() throws IOException {
+        String first = runner("digest").build().getOutput().replaceAll("(?s).*digest=([0-9a-f]{64}).*", "$1");
+        assertEquals(64, first.length());
+        assertEquals(first, runner("digest").build().getOutput().replaceAll("(?s).*digest=([0-9a-f]{64}).*", "$1"));
     }
 
     @Test

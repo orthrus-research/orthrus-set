@@ -75,6 +75,47 @@ public class SetExtension {
         return set.platform();
     }
 
+    /** The SHA-256 of the platform section, with its keys sorted: one value that changes when any platform value does. */
+    public String getPlatformDigest() {
+        StringBuilder canonical = new StringBuilder();
+        canonical(set.platform(), canonical);
+        try {
+            java.security.MessageDigest digest = java.security.MessageDigest.getInstance("SHA-256");
+            StringBuilder hex = new StringBuilder();
+            for (byte b : digest.digest(canonical.toString().getBytes(java.nio.charset.StandardCharsets.UTF_8))) {
+                hex.append(String.format("%02x", b));
+            }
+            return hex.toString();
+        } catch (java.security.NoSuchAlgorithmException e) {
+            throw new IllegalStateException(e);
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    private static void canonical(Object value, StringBuilder out) {
+        if (value instanceof Map) {
+            out.append('{');
+            boolean first = true;
+            for (Map.Entry<String, Object> e : new java.util.TreeMap<>((Map<String, Object>) value).entrySet()) {
+                out.append(first ? "" : ",").append(SetCleanroomPlugin.quote(e.getKey())).append(':');
+                canonical(e.getValue(), out);
+                first = false;
+            }
+            out.append('}');
+        } else if (value instanceof List) {
+            out.append('[');
+            for (int i = 0; i < ((List<Object>) value).size(); i++) {
+                out.append(i == 0 ? "" : ",");
+                canonical(((List<Object>) value).get(i), out);
+            }
+            out.append(']');
+        } else if (value instanceof String) {
+            out.append(SetCleanroomPlugin.quote((String) value));
+        } else {
+            out.append(value);
+        }
+    }
+
     public String getRevision() {
         return set.revision;
     }
