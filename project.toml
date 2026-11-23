@@ -1,5 +1,6 @@
 # The Set's own checks. Workbench runs them from a clean clone; a landing that changes set.json passes them first.
 schema = 1
+gate = ["schema"]  # above the first table: below one, TOML would put it in that table
 
 [project]
 name = "set"
@@ -9,4 +10,3 @@ description = "set.json holds to schema 1"
 inputs = ["set.json", "tools/check_set.py"]
 steps = [["{python}", "-B", "tools/check_set.py", "set.json"]]
 
-gate = ["schema"]
