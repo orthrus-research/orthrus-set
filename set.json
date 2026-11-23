@@ -1,6 +1,62 @@
 {
  "schema": 1,
- "projects": {},
+ "projects": {
+  "cubature": {
+   "branch": "main",
+   "commit": "98d87869f1101a83ce6333ebabcd7fa33ecd6c22",
+   "artifacts": {
+    "mod": {
+     "sha256": "9a6c1ab0a8db891c97211f7a5ba3feb62ecb7dacd750889f2fc1ef2bf25fab40",
+     "file": "Cubature-1.12.2-0.1.4.0-cleanroom.jar",
+     "glob": "cleanroom/build/*/libs/Cubature-*-cleanroom.jar",
+     "check": "cleanroom"
+    },
+    "sources": {
+     "sha256": "4bf9ce82af376939697619160fcbb5aa8d2b35f11b5f7313cd8c3c9c6f541354",
+     "file": "Cubature-1.12.2-0.1.4.0-sources.jar",
+     "glob": "cleanroom/build/*/libs/Cubature-*-sources.jar",
+     "check": "cleanroom"
+    },
+    "lab-observer": {
+     "sha256": "7be34cdbeee4b89489942a3dd6025d3479cc5372c8edc42aeec76cf21f78b2ab",
+     "file": "cubicchunks-lab-0.1.0-cleanroom.jar",
+     "glob": "lab/build/*/libs/cubicchunks-lab-*-cleanroom.jar",
+     "check": "lab"
+    }
+   },
+   "url": "https://github.com/orthrus-research/Cubature.git"
+  },
+  "orthlib": {
+   "branch": "main",
+   "commit": "b55a58db486c6b5d7555b64587425d2270276d77",
+   "artifacts": {
+    "mod": {
+     "sha256": "8d4c5445ac263ceb0cba7faefe97d010678c14339e169eede1a965205d849f83",
+     "file": "orthlib-0.5.0-dev.jar",
+     "glob": "build/libs/orthlib-*-dev.jar",
+     "check": "root"
+    },
+    "mcp": {
+     "sha256": "4b1eb226635c7ab98e7850b93164c2d239aced271140384f6b8da7a37b5541ea",
+     "file": "orthlib-0.5.0-dev-mcp.jar",
+     "glob": "build/libs/orthlib-*-mcp.jar",
+     "check": "root"
+    },
+    "sources": {
+     "sha256": "dbd4b60351b87ed73511c1a64173781a0482d607ca51a9481cb21249f7d1b6b8",
+     "file": "orthlib-0.5.0-dev-sources.jar",
+     "glob": "build/libs/orthlib-*-sources.jar",
+     "check": "root"
+    },
+    "mixinkit": {
+     "sha256": "f935979ea117b0cc434fd30e2ace425cbc6ef873959c3e02fbc09f442a99a565",
+     "file": "orthlib-mixinkit-0.5.0-dev.jar",
+     "glob": "mixinkit/build/libs/orthlib-mixinkit-*-dev.jar",
+     "check": "root"
+    }
+   }
+  }
+ },
  "third": {},
  "platform": {
   "java": 26,
