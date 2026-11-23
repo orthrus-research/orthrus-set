@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "projects": {},
+ "third": {},
+ "platform": {
+  "java": 26,
+  "jdk": {
+   "26": {
+    "build": "26.0.2.1+1",
+    "linux": {
+     "url": "https://github.com/adoptium/temurin26-binaries/releases/download/jdk-26.0.2.1%2B1/OpenJDK26U-jdk_x64_linux_hotspot_26.0.2.1_1.tar.gz",
+     "sha256": "451c12e68747bcfa2fb5a2c16b00483fedb9fa6d77bc962d30957f76ac17044d"
+    },
+    "windows": {
+     "url": "https://github.com/adoptium/temurin26-binaries/releases/download/jdk-26.0.2.1%2B1/OpenJDK26U-jdk_x64_windows_hotspot_26.0.2.1_1.zip",
+     "sha256": "cf914bf4cc6bf9cedcabec216165bafd10331c5b4d4f2e424b55f6a2e68a1cf5"
+    }
+   },
+   "17": {
+    "build": "17.0.21.1+2",
+    "linux": {
+     "url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.21.1%2B2/OpenJDK17U-jdk_x64_linux_hotspot_17.0.21.1_2.tar.gz",
+     "sha256": "0b0ac5eab6db6abaec68c9913bcddb31321e5da411c45073d520d9c125e6f7b4"
+    },
+    "windows": {
+     "url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.21.1%2B2/OpenJDK17U-jdk_x64_windows_hotspot_17.0.21.1_2.zip",
+     "sha256": "eafba0944f777abdc74d5aad16049c9b5a1275b6ce99e2939ba9f7f3e6f08c87"
+    }
+   },
+   "8": {
+    "build": "8u512-b09",
+    "linux": {
+     "url": "https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u512-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u512b09.tar.gz",
+     "sha256": "fb3bfa869012419b562bb4235d0d83ec4f8c1dda62ae432ba20c6c3a7e43f7e4"
+    },
+    "windows": {
+     "url": "https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u512-b09/OpenJDK8U-jdk_x64_windows_hotspot_8u512b09.zip",
+     "sha256": "20f248ddd600f900cd9b235d50d54cdb27e7b750f140d381176a7612c53663cd"
+    }
+   }
+  },
+  "gradle": {
+   "version": "9.8.1",
+   "url": "https://services.gradle.org/distributions/gradle-9.8.1-bin.zip",
+   "sha256": "dce76f55f8e251a3a1f130eb120f30b3d271de2b76c9b0729d316b5a1b6dc01f"
+  },
+  "cleanroom": {
+   "version": "0.7.14-alpha",
+   "lwjgl": "3.4.3"
+  },
+  "cleanroomgradle": "0.23.0",
+  "plugin_repositories": [
+   "https://maven.cleanroommc.com"
+  ],
+  "logic": null
+ },
+ "holds": {},
+ "doctor": {
+  "exempt": [
+   "evidence/**"
+  ]
+ }
+}

@@ -1,0 +1,12 @@
+# The Set's own checks. Workbench runs them from a clean clone; a landing that changes set.json passes them first.
+schema = 1
+
+[project]
+name = "set"
+
+[checks.schema]
+description = "set.json holds to schema 1"
+inputs = ["set.json", "tools/check_set.py"]
+steps = [["{python}", "-B", "tools/check_set.py", "set.json"]]
+
+gate = ["schema"]

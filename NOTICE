@@ -1,0 +1,7 @@
+Set
+Copyright 2026 Orthrus Research
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+It contains no code taken from other projects. set.json names third-party files by URL or coordinate and SHA-256
+only; each of those files keeps its own licence, recorded beside it.
