@@ -221,7 +221,7 @@
   "plugin_repositories": [
    "https://maven.cleanroommc.com"
   ],
-  "logic": "9faf147577192301e81a7dbaf42152b436f1f959"
+  "logic": "a769f61e4d7e4896cc398ea5bea7ac0f8958c6df"
  },
  "holds": {
   "cubature:mod@orthlib": {
