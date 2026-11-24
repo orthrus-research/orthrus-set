@@ -182,7 +182,7 @@
   "plugin_repositories": [
    "https://maven.cleanroommc.com"
   ],
-  "logic": "5e5300217781b6a975978de395e0092e0a70d6b8"
+  "logic": "9faf147577192301e81a7dbaf42152b436f1f959"
  },
  "holds": {
   "orthlib:cubature-adapter": {
