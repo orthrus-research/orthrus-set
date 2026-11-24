@@ -55,6 +55,19 @@
      "check": "root"
     }
    }
+  },
+  "quadrature": {
+   "branch": "main",
+   "commit": "955c177c04c584ac2a5893650acfc78fe2e05b0a",
+   "artifacts": {
+    "mod": {
+     "sha256": "22e9783d868e5c7a4ab63a93e0420edafb1d4e90511881281b27b40af2c15052",
+     "file": "quadrature-0.1.0-dev.jar",
+     "glob": "build/libs/quadrature-*-dev.jar",
+     "check": "build"
+    }
+   },
+   "url": "https://github.com/orthrus-research/Quadrature.git"
   }
  },
  "third": {},
