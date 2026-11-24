@@ -3,7 +3,7 @@
  "projects": {
   "cubature": {
    "branch": "main",
-   "commit": "43f9cef1d887dfcf46a24b71ee4c928524ac8e30",
+   "commit": "d64f75bb6da64262240b2eed7de052fbbcdb3d63",
    "artifacts": {
     "mod": {
      "sha256": "9a6c1ab0a8db891c97211f7a5ba3feb62ecb7dacd750889f2fc1ef2bf25fab40",
