@@ -28,7 +28,7 @@
   },
   "gtceur": {
    "branch": "feat/render-interface-release",
-   "commit": "5703f31e2c7f8092ecc8c629bc824becb8e0fbad",
+   "commit": "2954e40e4ec789342f849af9fc3fdf0f3eb05da9",
    "artifacts": {
     "mod": {
      "sha256": "59421e45c55810615530a734a3b3e9afe70c3300b400fcde7f7634711a5ab53e",
@@ -83,10 +83,10 @@
   },
   "quadrature": {
    "branch": "main",
-   "commit": "955c177c04c584ac2a5893650acfc78fe2e05b0a",
+   "commit": "ef092d4aa7e1e15c5ca23f82344ee45d0e8b0b7f",
    "artifacts": {
     "mod": {
-     "sha256": "22e9783d868e5c7a4ab63a93e0420edafb1d4e90511881281b27b40af2c15052",
+     "sha256": "0dfc705d321e668d68e2531f6c4e89460d4687d1aa04e034c10b28713277bdcc",
      "file": "quadrature-0.1.0-dev.jar",
      "glob": "build/libs/quadrature-*-dev.jar",
      "check": "build"
