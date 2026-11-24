@@ -123,6 +123,13 @@
    },
    "licence": "LGPL-3.0",
    "mod_id": "modularui"
+  },
+  "scalar": {
+   "file": "Scalar Legacy-1.0.1.jar",
+   "sha256": "350d1c378f3b0ac8e7b3df0432482bbb5341c79d07df843c747be1d5fdc23cfe",
+   "source": "https://www.curseforge.com/minecraft/mc-mods/scalar-legacy/files/6842491",
+   "licence": "LGPL-2.1",
+   "mod_id": "scalar"
   }
  },
  "platform": {
