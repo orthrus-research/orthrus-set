@@ -185,6 +185,18 @@
   "logic": "9faf147577192301e81a7dbaf42152b436f1f959"
  },
  "holds": {
+  "cubature:mod@orthlib": {
+   "commit": "c3e240d12da170d3e3df33fa0644828d40d0b6f5",
+   "artifacts": {
+    "mod": {
+     "sha256": "a8709af51acbd5f1b8d8d17f2e22e2563906d3ded190c6e9eeab54f4846bab18",
+     "file": "Cubature-cleanroom.jar"
+    }
+   },
+   "reason": "OrthLib's Cubature adapter stays on the Cubature of its native qualification until it is requalified on the current Cubature line",
+   "since": "2026-11-24",
+   "source": "OrthLib's owner-qualification copy of Cubature c3e240d1 (Cubature-cleanroom.jar)"
+  },
   "orthlib:cubature-adapter": {
    "commit": "94e973db5c9c1d73bbee97b8deb1bafe4ce9ae70",
    "artifacts": {
