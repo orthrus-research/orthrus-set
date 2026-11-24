@@ -53,7 +53,7 @@
   },
   "guidegtr": {
    "branch": "feat/build-on-orthlib",
-   "commit": "e075f449f195de8f7966ccd69633d6881396085a",
+   "commit": "9c726a9ba98bbafe74a158d5607cf8af47b1b4bb",
    "artifacts": {
     "mod": {
      "sha256": "4e60b7811bffea89d0efc3fc0b899f2caa28abd536b228a8a9ac1194a49fb49b",
@@ -77,7 +77,7 @@
   },
   "orthlib": {
    "branch": "main",
-   "commit": "495e9382fdcd155fa9f510d5833a810c1c60646b",
+   "commit": "c5bcdd42fa50d431186b84938a40149176e60da2",
    "artifacts": {
     "mod": {
      "sha256": "6bddf095759ed671bc2e23a47b213ba1c855d1608601bf114685bc6aded839ef",
@@ -137,6 +137,12 @@
    },
    "licence": "GPL-3.0-or-later",
    "mod_id": "fugue"
+  },
+  "gson": {
+   "file": "gson-2.14.0.jar",
+   "sha256": "2cbd119bf1961c28788310963dc80ba65f58cdeec1dd139c8bdb1240faa2c36f",
+   "source": "https://repo1.maven.org/maven2/com/google/code/gson/gson/2.14.0/gson-2.14.0.jar (Maven Central, com.google.code.gson:gson:2.14.0)",
+   "licence": "Apache-2.0"
   },
   "modularui": {
    "module": "com.cleanroommc:modularui:3.1.6",
@@ -263,7 +269,31 @@
  },
  "doctor": {
   "exempt": [
-   "evidence/**"
+   "evidence/**",
+   {
+    "project": "guidegtr",
+    "path": "tools/build_gtceur.ps1",
+    "reason": "recorded evidence, not a live pin: GuideGTR's recipe for its held GTCEuR 2.8.7-beta, and OrthLib's inputs and audits of the commits inspected on 2026-11-06 and 07",
+    "since": "2026-11-24"
+   },
+   {
+    "project": "orthlib",
+    "path": "verification/mesh/consumer-inputs.json",
+    "reason": "recorded evidence, not a live pin: GuideGTR's recipe for its held GTCEuR 2.8.7-beta, and OrthLib's inputs and audits of the commits inspected on 2026-11-06 and 07",
+    "since": "2026-11-24"
+   },
+   {
+    "project": "orthlib",
+    "path": "verification/r3/*-inputs.json",
+    "reason": "recorded evidence, not a live pin: GuideGTR's recipe for its held GTCEuR 2.8.7-beta, and OrthLib's inputs and audits of the commits inspected on 2026-11-06 and 07",
+    "since": "2026-11-24"
+   },
+   {
+    "project": "orthlib",
+    "path": "verification/rendering/r3-*.json",
+    "reason": "recorded evidence, not a live pin: GuideGTR's recipe for its held GTCEuR 2.8.7-beta, and OrthLib's inputs and audits of the commits inspected on 2026-11-06 and 07",
+    "since": "2026-11-24"
+   }
   ]
  }
 }
