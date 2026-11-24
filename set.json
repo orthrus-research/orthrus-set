@@ -176,7 +176,22 @@
   },
   "cleanroom": {
    "version": "0.7.14-alpha",
-   "lwjgl": "3.4.3"
+   "lwjgl": "3.4.3",
+   "installer": {
+    "url": "https://github.com/CleanroomMC/Cleanroom/releases/download/0.7.14-alpha/cleanroom-0.7.14-alpha-installer.jar",
+    "file": "cleanroom-0.7.14-alpha-installer.jar",
+    "sha256": "03e0e55217271c90792762ab4acf94f123a0a20b60a3d13932e035d40ed4daca"
+   },
+   "universal": {
+    "url": "https://github.com/CleanroomMC/Cleanroom/releases/download/0.7.14-alpha/cleanroom-0.7.14-alpha-universal.jar",
+    "file": "cleanroom-0.7.14-alpha-universal.jar",
+    "sha256": "501971a551194469da102e43202d454cb80de954efd3f2915f37f43eb28c591d"
+   },
+   "prism": {
+    "url": "https://github.com/CleanroomMC/Cleanroom/releases/download/0.7.14-alpha/cleanroom-0.7.14-alpha.zip",
+    "file": "cleanroom-0.7.14-alpha.zip",
+    "sha256": "117705e59789c9a173c73787adbdc50ff8a16c579f13a95e5cceba4f67525f04"
+   }
   },
   "cleanroomgradle": "0.23.0",
   "plugin_repositories": [
