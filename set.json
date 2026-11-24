@@ -51,6 +51,30 @@
    },
    "url": "https://github.com/orthrus-research/GTCEu-Reloaded.git"
   },
+  "guidegtr": {
+   "branch": "feat/build-on-orthlib",
+   "commit": "37e280bd5863b901a8ff5223e4155290d3c7c21c",
+   "artifacts": {
+    "mod": {
+     "sha256": "4e60b7811bffea89d0efc3fc0b899f2caa28abd536b228a8a9ac1194a49fb49b",
+     "file": "igg-0.1.0-dev.jar",
+     "glob": "build/libs/igg-*-dev.jar",
+     "check": "build"
+    },
+    "mcp": {
+     "sha256": "ce340179be90298199750dfa1c5e44c75a7a39edb9c7c86593b43a90c1eb4ca7",
+     "file": "igg-0.1.0-dev-mcp.jar",
+     "glob": "build/libs/igg-*-mcp.jar",
+     "check": "build"
+    },
+    "sources": {
+     "sha256": "ae5df79a0c4d0117dd732461f67ebf748e7979e80673a7f7e2eb222f1f077fae",
+     "file": "igg-0.1.0-dev-sources.jar",
+     "glob": "build/libs/igg-*-sources.jar",
+     "check": "build"
+    }
+   }
+  },
   "orthlib": {
    "branch": "main",
    "commit": "8086e52e7a0201c536278ca810447967d3c8d958",
