@@ -105,6 +105,15 @@
    "licence": "LGPL-2.1-only",
    "mod_id": "codechickenlib"
   },
+  "fugue": {
+   "module": "maven.modrinth:vylTACsh:ijk8Zy92",
+   "repository": "https://api.modrinth.com/maven",
+   "files": {
+    "runtime": "002bc5dd1e9ba954e8eb6bd14a85a6dc32525ae90c2613aa577c67067c820af3"
+   },
+   "licence": "GPL-3.0-or-later",
+   "mod_id": "fugue"
+  },
   "modularui": {
    "module": "com.cleanroommc:modularui:3.1.6",
    "repository": "https://maven.cleanroommc.com",
