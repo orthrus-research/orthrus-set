@@ -26,6 +26,31 @@
    },
    "url": "https://github.com/orthrus-research/Cubature.git"
   },
+  "gtceur": {
+   "branch": "feat/render-interface-release",
+   "commit": "5703f31e2c7f8092ecc8c629bc824becb8e0fbad",
+   "artifacts": {
+    "mod": {
+     "sha256": "59421e45c55810615530a734a3b3e9afe70c3300b400fcde7f7634711a5ab53e",
+     "file": "gtceu-reloaded-3.0.0-reloaded.1-alpha.1.jar",
+     "glob": "build/libs/gtceu-reloaded-*-alpha.1.jar",
+     "check": "build"
+    },
+    "mcp": {
+     "sha256": "a3dfd3f4472cee8e3f01881a0af0312dcc67fe5a20d25d7f287b2b608c8c94aa",
+     "file": "gtceu-reloaded-3.0.0-reloaded.1-alpha.1-mcp.jar",
+     "glob": "build/libs/gtceu-reloaded-*-mcp.jar",
+     "check": "build"
+    },
+    "sources": {
+     "sha256": "557c2f35cd16c4570aa300a1c33e5312c0977ba380f6ac40cfcdf011d95f6d46",
+     "file": "gtceu-reloaded-3.0.0-reloaded.1-alpha.1-sources.jar",
+     "glob": "build/libs/gtceu-reloaded-*-sources.jar",
+     "check": "build"
+    }
+   },
+   "url": "https://github.com/orthrus-research/GTCEu-Reloaded.git"
+  },
   "orthlib": {
    "branch": "main",
    "commit": "b55a58db486c6b5d7555b64587425d2270276d77",
