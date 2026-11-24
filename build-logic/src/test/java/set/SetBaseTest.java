@@ -148,6 +148,27 @@ class SetBaseTest {
     }
 
     @Test
+    void theMixinMappingsAreTheCompilesOutputThroughCleanMixsOptions() throws IOException {
+        Files.write(project.resolve("build.gradle"), String.join("\n",
+                "def mappings = set.mixinMappings()",
+                "assert mappings.is(set.mixinMappings())",
+                "tasks.register('mappings') {",
+                "    def compile = tasks.named('compileJava')",
+                "    doLast {",
+                "        def options = compile.get().options",
+                "        println 'args=' + options.compilerArgumentProviders.collectMany { it.asArguments() as List }",
+                "        println 'outputs=' + compile.get().outputs.files.files.contains(mappings.get().asFile)",
+                "    }",
+                "}",
+                "").getBytes(StandardCharsets.UTF_8), java.nio.file.StandardOpenOption.APPEND);
+        BuildResult ok = runner("mappings", "compileJava").build();
+        String tsrg = project.resolve("build/generated/mixin/mcp2srg.tsrg").toFile().getAbsolutePath();
+        assertTrue(ok.getOutput().contains("args=[-AmergeBehaviour=merge, -AoutTsrgFile=" + tsrg + "]"), ok.getOutput());
+        assertTrue(ok.getOutput().contains("outputs=true"), ok.getOutput());
+        assertTrue(project.resolve("build/generated/mixin").toFile().isDirectory(), ok.getOutput());
+    }
+
+    @Test
     void versionsCompareByNumber() {
         assertEquals(-1, Integer.signum(SetExtension.compare("0.5.0-dev", "0.10.0")));
         assertEquals(0, SetExtension.compare("1.2", "1.2.0"));

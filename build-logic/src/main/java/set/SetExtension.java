@@ -15,16 +15,19 @@ import javax.inject.Inject;
 import org.gradle.api.GradleException;
 import org.gradle.api.Project;
 import org.gradle.api.file.FileCollection;
+import org.gradle.api.file.RegularFile;
+import org.gradle.api.provider.Provider;
 
 /**
- * The {@code set} extension of every project: a sibling's file as the set names it, a third-party file, a floor and
- * the platform. A sibling comes from the Store by its SHA-256, or from a stand-in folder or JAR the person gave;
+ * The {@code set} extension of every project: a sibling's file as the set names it, a third-party file, a floor,
+ * the platform, and for a Mixin build the merged member mappings. A sibling comes from the Store by its SHA-256, or from a stand-in folder or JAR the person gave;
  * every Store file handed out is re-hashed by setVerify before any compile.
  */
 public class SetExtension {
     private final Project project;
     private final SetFile set;
     private final Map<File, String> verified = new LinkedHashMap<>();
+    private Provider<RegularFile> mixinMappings;
 
     @Inject
     public SetExtension(Project project, SetFile set) {
@@ -93,6 +96,18 @@ public class SetExtension {
 
     public Map<String, Object> platform() {
         return set.platform();
+    }
+
+    /**
+     * For a Mixin build with CleanMix: has compileJava merge the shadow and overwrite member mappings into
+     * build/generated/mixin/mcp2srg.tsrg, and returns that file for the reobf task's map
+     * ({@code reobfJar { map.setFrom(set.mixinMappings()) }}). The first call configures the compile.
+     */
+    public Provider<RegularFile> mixinMappings() {
+        if (mixinMappings == null) {
+            mixinMappings = MixinMappings.configure(project);
+        }
+        return mixinMappings;
     }
 
     /** The SHA-256 of the platform section, with its keys sorted: one value that changes when any platform value does. */
