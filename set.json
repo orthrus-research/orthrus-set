@@ -278,6 +278,48 @@
    },
    {
     "project": "orthlib",
+    "path": "docs/acceptance/**",
+    "reason": "historical and provenance records that cite the commits inspected or built at the time, and the doctor's own code, tests and changelog naming what it looks for; none is a live pin",
+    "since": "2026-11-24"
+   },
+   {
+    "project": "orthlib",
+    "path": "docs/program-resources.md",
+    "reason": "historical and provenance records that cite the commits inspected or built at the time, and the doctor's own code, tests and changelog naming what it looks for; none is a live pin",
+    "since": "2026-11-24"
+   },
+   {
+    "project": "orthlib",
+    "path": "docs/provenance/**",
+    "reason": "historical and provenance records that cite the commits inspected or built at the time, and the doctor's own code, tests and changelog naming what it looks for; none is a live pin",
+    "since": "2026-11-24"
+   },
+   {
+    "project": "orthlib",
+    "path": "docs/render-interface.md",
+    "reason": "historical and provenance records that cite the commits inspected or built at the time, and the doctor's own code, tests and changelog naming what it looks for; none is a live pin",
+    "since": "2026-11-24"
+   },
+   {
+    "project": "orthlib",
+    "path": "docs/rendering-seams.md",
+    "reason": "historical and provenance records that cite the commits inspected or built at the time, and the doctor's own code, tests and changelog naming what it looks for; none is a live pin",
+    "since": "2026-11-24"
+   },
+   {
+    "project": "orthlib",
+    "path": "docs/world-native-validation.md",
+    "reason": "historical and provenance records that cite the commits inspected or built at the time, and the doctor's own code, tests and changelog naming what it looks for; none is a live pin",
+    "since": "2026-11-24"
+   },
+   {
+    "project": "orthlib",
+    "path": "docs/world-next-bundle.md",
+    "reason": "historical and provenance records that cite the commits inspected or built at the time, and the doctor's own code, tests and changelog naming what it looks for; none is a live pin",
+    "since": "2026-11-24"
+   },
+   {
+    "project": "orthlib",
     "path": "verification/mesh/consumer-inputs.json",
     "reason": "recorded evidence, not a live pin: GuideGTR's recipe for its held GTCEuR 2.8.7-beta, and OrthLib's inputs and audits of the commits inspected on 2026-11-06 and 07",
     "since": "2026-11-24"
@@ -292,6 +334,54 @@
     "project": "orthlib",
     "path": "verification/rendering/r3-*.json",
     "reason": "recorded evidence, not a live pin: GuideGTR's recipe for its held GTCEuR 2.8.7-beta, and OrthLib's inputs and audits of the commits inspected on 2026-11-06 and 07",
+    "since": "2026-11-24"
+   },
+   {
+    "project": "parallax-lab",
+    "path": "docs/INVESTIGATION.md",
+    "reason": "historical and provenance records that cite the commits inspected or built at the time, and the doctor's own code, tests and changelog naming what it looks for; none is a live pin",
+    "since": "2026-11-24"
+   },
+   {
+    "project": "quadrature",
+    "path": "docs/PROVENANCE.md",
+    "reason": "historical and provenance records that cite the commits inspected or built at the time, and the doctor's own code, tests and changelog naming what it looks for; none is a live pin",
+    "since": "2026-11-24"
+   },
+   {
+    "project": "riven",
+    "path": "CHANGELOG.md",
+    "reason": "historical and provenance records that cite the commits inspected or built at the time, and the doctor's own code, tests and changelog naming what it looks for; none is a live pin",
+    "since": "2026-11-24"
+   },
+   {
+    "project": "riven",
+    "path": "docs/qualification/**",
+    "reason": "historical and provenance records that cite the commits inspected or built at the time, and the doctor's own code, tests and changelog naming what it looks for; none is a live pin",
+    "since": "2026-11-24"
+   },
+   {
+    "project": "workbench",
+    "path": "CHANGELOG.md",
+    "reason": "historical and provenance records that cite the commits inspected or built at the time, and the doctor's own code, tests and changelog naming what it looks for; none is a live pin",
+    "since": "2026-11-24"
+   },
+   {
+    "project": "workbench",
+    "path": "sdk/python/wb/doctor.py",
+    "reason": "historical and provenance records that cite the commits inspected or built at the time, and the doctor's own code, tests and changelog naming what it looks for; none is a live pin",
+    "since": "2026-11-24"
+   },
+   {
+    "project": "workbench",
+    "path": "tests/test_doctor.py",
+    "reason": "historical and provenance records that cite the commits inspected or built at the time, and the doctor's own code, tests and changelog naming what it looks for; none is a live pin",
+    "since": "2026-11-24"
+   },
+   {
+    "project": "workbench",
+    "path": "tests/test_land.py",
+    "reason": "historical and provenance records that cite the commits inspected or built at the time, and the doctor's own code, tests and changelog naming what it looks for; none is a live pin",
     "since": "2026-11-24"
    }
   ]
