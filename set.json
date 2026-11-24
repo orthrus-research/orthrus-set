@@ -70,7 +70,18 @@
    "url": "https://github.com/orthrus-research/Quadrature.git"
   }
  },
- "third": {},
+ "third": {
+  "modularui": {
+   "module": "com.cleanroommc:modularui:3.1.6",
+   "repository": "https://maven.cleanroommc.com",
+   "files": {
+    "dev": "d9cb400fa2e57ae527adbb91180549f756cc3bcf3d23dcc51064cb1d8d3c5398",
+    "runtime": "4c16829c70b322aab735e73f53608fcabbf1d14956d5365c0c2b911c4d4dca54"
+   },
+   "licence": "LGPL-3.0",
+   "mod_id": "modularui"
+  }
+ },
  "platform": {
   "java": 26,
   "jdk": {
@@ -121,7 +132,7 @@
   "plugin_repositories": [
    "https://maven.cleanroommc.com"
   ],
-  "logic": "8b6ab1e4385b068f574e6faed7122c62cfa8ef16"
+  "logic": "5e5300217781b6a975978de395e0092e0a70d6b8"
  },
  "holds": {
   "orthlib:cubature-adapter": {
