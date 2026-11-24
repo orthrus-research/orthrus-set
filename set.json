@@ -71,6 +71,15 @@
   }
  },
  "third": {
+  "codechickenlib": {
+   "module": "maven.modrinth:KphJPRlN:CBqIvJQ2",
+   "repository": "https://api.modrinth.com/maven",
+   "files": {
+    "runtime": "bd27374119e728569d6b8e7f493db70869cf8f915f10089b421df76b6a349b34"
+   },
+   "licence": "LGPL-2.1-only",
+   "mod_id": "codechickenlib"
+  },
   "modularui": {
    "module": "com.cleanroommc:modularui:3.1.6",
    "repository": "https://maven.cleanroommc.com",
