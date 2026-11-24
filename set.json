@@ -53,7 +53,7 @@
   },
   "guidegtr": {
    "branch": "feat/build-on-orthlib",
-   "commit": "3d3c1dc715c8f03e7e96dfef1c827449bb5d9b2e",
+   "commit": "e075f449f195de8f7966ccd69633d6881396085a",
    "artifacts": {
     "mod": {
      "sha256": "4e60b7811bffea89d0efc3fc0b899f2caa28abd536b228a8a9ac1194a49fb49b",
@@ -77,16 +77,16 @@
   },
   "orthlib": {
    "branch": "main",
-   "commit": "2e4a9268f33deb1a75ad4c3f6068273ac0460f1c",
+   "commit": "495e9382fdcd155fa9f510d5833a810c1c60646b",
    "artifacts": {
     "mod": {
-     "sha256": "155163e5124df24342a8cb5026434263c0b3eb66f259f806dbb41ce9d68e09da",
+     "sha256": "6bddf095759ed671bc2e23a47b213ba1c855d1608601bf114685bc6aded839ef",
      "file": "orthlib-0.5.0-dev.jar",
      "glob": "build/libs/orthlib-*-dev.jar",
      "check": "root"
     },
     "mcp": {
-     "sha256": "9801a7b55556bc0b95a9a2a1325b1fae1d37128b096e3f54bf2a70d6315b82b7",
+     "sha256": "bcfb7751fc8e920752d222a1e1bd1023b9caea948b66e4ee4a9ade73f01d97f7",
      "file": "orthlib-0.5.0-dev-mcp.jar",
      "glob": "build/libs/orthlib-*-dev-mcp.jar",
      "check": "root"
