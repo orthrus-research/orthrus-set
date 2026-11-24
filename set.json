@@ -212,6 +212,18 @@
    "since": "2026-11-24",
    "source": "OrthLib's owner-qualification copy of Cubature c3e240d1 (Cubature-cleanroom.jar)"
   },
+  "gtceur:mod@guidegtr": {
+   "commit": "5568f5055f7ed5130bd0184d3bfdfc51f278b532",
+   "artifacts": {
+    "mod": {
+     "sha256": "2e2baf9208b15579dfc0d00e575f1061aab8b210167a6b4dc869263b2ff182ad",
+     "file": "gregtech-1.12.2-2.8.7-beta.jar"
+    }
+   },
+   "reason": "GuideGTR compiles against GTCEuR 2.8.7-beta until it is ported to the current GTCEuR line; no container builds these RetroFuturaGradle bytes",
+   "since": "2026-11-24",
+   "source": "GuideGTR's staged copy of GTCEu-Reloaded 5568f505 (gregtech-1.12.2-2.8.7-beta.jar), built with Gradle 8.9, Java 17 and RetroFuturaGradle 1.4.0 by GuideGTR's tools/build_gtceur.ps1"
+  },
   "orthlib:cubature-adapter": {
    "commit": "94e973db5c9c1d73bbee97b8deb1bafe4ce9ae70",
    "artifacts": {
