@@ -53,16 +53,16 @@
   },
   "orthlib": {
    "branch": "main",
-   "commit": "b55a58db486c6b5d7555b64587425d2270276d77",
+   "commit": "8086e52e7a0201c536278ca810447967d3c8d958",
    "artifacts": {
     "mod": {
-     "sha256": "8d4c5445ac263ceb0cba7faefe97d010678c14339e169eede1a965205d849f83",
+     "sha256": "33cc66456c38e9de7638eeba5a0476ef36d19c77f517a2fab48b12efcec5be68",
      "file": "orthlib-0.5.0-dev.jar",
      "glob": "build/libs/orthlib-*-dev.jar",
      "check": "root"
     },
     "mcp": {
-     "sha256": "4b1eb226635c7ab98e7850b93164c2d239aced271140384f6b8da7a37b5541ea",
+     "sha256": "4a181e85a7c16c09b869e12219d78977afff793b8b2b986f7453caa8cb085108",
      "file": "orthlib-0.5.0-dev-mcp.jar",
      "glob": "build/libs/orthlib-*-mcp.jar",
      "check": "root"
