@@ -83,7 +83,7 @@
   },
   "quadrature": {
    "branch": "main",
-   "commit": "ef092d4aa7e1e15c5ca23f82344ee45d0e8b0b7f",
+   "commit": "428f4e26247f518aa1b4928cba0e2e4c0fe3096d",
    "artifacts": {
     "mod": {
      "sha256": "0dfc705d321e668d68e2531f6c4e89460d4687d1aa04e034c10b28713277bdcc",
