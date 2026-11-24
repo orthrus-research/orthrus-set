@@ -3,7 +3,7 @@
  "projects": {
   "cubature": {
    "branch": "main",
-   "commit": "d64f75bb6da64262240b2eed7de052fbbcdb3d63",
+   "commit": "334331b4fed70a26f957164d7c3b82d328e9e869",
    "artifacts": {
     "mod": {
      "sha256": "9a6c1ab0a8db891c97211f7a5ba3feb62ecb7dacd750889f2fc1ef2bf25fab40",
@@ -28,7 +28,7 @@
   },
   "gtceur": {
    "branch": "feat/render-interface-release",
-   "commit": "783b0ce83f55700de13c2e9d68998f063ea4d2e9",
+   "commit": "c66ee4eb8eb2f070f853e87048cd48f1961dd0e8",
    "artifacts": {
     "mod": {
      "sha256": "59421e45c55810615530a734a3b3e9afe70c3300b400fcde7f7634711a5ab53e",
