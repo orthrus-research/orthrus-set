@@ -106,6 +106,28 @@ class SetBaseTest {
     }
 
     @Test
+    void aHoldForThisConsumerWinsOverAHoldForAllAndTheLine() throws IOException {
+        byte[] held = jar("held.txt");
+        String heldDigest = SetVerify.sha256(writeBytes(base.resolve("lib-0.jar"), held).toFile());
+        writeBytes(store.resolve("files").resolve(heldDigest).resolve("lib-0.jar"), held);
+        byte[] other = jar("other.txt");
+        String otherDigest = SetVerify.sha256(writeBytes(base.resolve("lib-9.jar"), other).toFile());
+        writeBytes(store.resolve("files").resolve(otherDigest).resolve("lib-9.jar"), other);
+        String text = new String(Files.readAllBytes(setDir.resolve("set.json")), StandardCharsets.UTF_8);
+        String holds = "\"holds\": {\"lib:mod@consumer\": {\"commit\": \"" + "c".repeat(40) + "\", \"artifacts\": {\"mod\":"
+                + " {\"sha256\": \"" + heldDigest + "\", \"file\": \"lib-0.jar\"}}}, \"lib:mod\": {\"commit\": \""
+                + "d".repeat(40) + "\", \"artifacts\": {\"mod\": {\"sha256\": \"" + otherDigest + "\", \"file\": \"lib-9.jar\"}}}}";
+        write(setDir.resolve("set.json"), text.replace("\"holds\": {}", holds));
+        BuildResult unnamed = runner("where").build();  // no project.toml: only the hold for everyone applies
+        assertTrue(unnamed.getOutput().contains("lib=lib-9.jar"), unnamed.getOutput());
+        write(project.resolve("project.toml"), "schema = 1\n[project]\nname = \"consumer\"\n");
+        BuildResult named = runner("where").build();
+        assertTrue(named.getOutput().contains("lib=lib-0.jar"), named.getOutput());
+        BuildResult someone = runner("where", "-Pset.project=someone").build();
+        assertTrue(someone.getOutput().contains("lib=lib-9.jar"), someone.getOutput());
+    }
+
+    @Test
     void anotherJdkMajorIsRefused() throws IOException {
         writeSet(8);
         BuildResult refused = runner("help").buildAndFail();

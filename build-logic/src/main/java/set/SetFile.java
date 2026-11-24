@@ -23,6 +23,7 @@ final class SetFile {
     final File store;
     final File work;            // the folder holding the .set this build took its revision from, if any
     final Map<String, File> standIns = new LinkedHashMap<>();
+    String consumer;            // this build's project name: -Pset.project, else [project] name in its project.toml
 
     private SetFile(File dir, String revision, Map<String, Object> data, File store, File work) {
         this.dir = dir;
@@ -70,7 +71,29 @@ final class SetFile {
         String store = properties.get("set.store");
         SetFile set = new SetFile(dir, revision, data, store == null ? null : new File(store), work);
         set.findStandIns(settingsDir, properties);
+        set.consumer = properties.containsKey("set.project") ? properties.get("set.project") : projectName(settingsDir);
         return set;
+    }
+
+    /** The name in [project] of the project.toml beside the settings file, or null without one. */
+    static String projectName(File settingsDir) {
+        File manifest = new File(settingsDir, "project.toml");
+        if (!manifest.isFile()) {
+            return null;
+        }
+        boolean inProject = false;
+        for (String line : read(manifest.toPath()).split("\\r?\\n")) {
+            String trimmed = line.trim();
+            if (trimmed.startsWith("[")) {
+                inProject = trimmed.equals("[project]");
+            } else if (inProject) {
+                java.util.regex.Matcher m = java.util.regex.Pattern.compile("^name\\s*=\\s*\"([^\"]+)\"").matcher(trimmed);
+                if (m.find()) {
+                    return m.group(1);
+                }
+            }
+        }
+        return null;
     }
 
     private void findStandIns(File settingsDir, Map<String, String> properties) {
@@ -132,15 +155,44 @@ final class SetFile {
         return (Map<String, Object>) line;
     }
 
+    /**
+     * One artifact of a sibling as this build takes it: a hold for this consumer (project:artifact@consumer), else a
+     * hold for everyone (project:artifact), else the line's. A held item keeps the line's glob for stand-ins and
+     * names its hold.
+     */
     @SuppressWarnings("unchecked")
     Map<String, Object> artifact(String project, String artifact) {
-        Map<String, Object> artifacts = (Map<String, Object>) line(project).getOrDefault("artifacts", Collections.emptyMap());
-        Object item = artifacts.get(artifact);
-        if (!(item instanceof Map)) {
+        Map<String, Object> lineItem = null;
+        Object lineValue = projects().get(project);
+        if (lineValue instanceof Map) {
+            Object item = ((Map<String, Object>) lineValue).getOrDefault("artifacts", Collections.emptyMap());
+            Object found = item instanceof Map ? ((Map<String, Object>) item).get(artifact) : null;
+            lineItem = found instanceof Map ? (Map<String, Object>) found : null;
+        }
+        String[] keys = consumer == null ? new String[] {project + ":" + artifact}
+                : new String[] {project + ":" + artifact + "@" + consumer, project + ":" + artifact};
+        for (String key : keys) {
+            Object hold = table("holds").get(key);
+            if (!(hold instanceof Map)) {
+                continue;
+            }
+            Object held = ((Map<String, Object>) hold).get("artifacts");
+            Object item = held instanceof Map ? ((Map<String, Object>) held).get(artifact) : null;
+            if (item instanceof Map) {
+                Map<String, Object> merged = new LinkedHashMap<>((Map<String, Object>) item);
+                if (lineItem != null && lineItem.get("glob") != null) {
+                    merged.putIfAbsent("glob", lineItem.get("glob"));
+                }
+                merged.put("hold", key);
+                return merged;
+            }
+        }
+        if (lineItem == null) {
+            Map<String, Object> artifacts = (Map<String, Object>) line(project).getOrDefault("artifacts", Collections.emptyMap());
             throw new IllegalStateException(project + "'s line names no artifact " + artifact
                     + " (it has: " + artifacts.keySet() + ")");
         }
-        return (Map<String, Object>) item;
+        return lineItem;
     }
 
     String shortRevision() {
