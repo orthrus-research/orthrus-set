@@ -62,6 +62,26 @@ public class SetExtension {
         return project.files(fromStore(name, String.valueOf(third.get("sha256")), String.valueOf(third.get("file"))));
     }
 
+    /** A third-party entry as the set records it: module, repository, files (kind to SHA-256), licence, mod_id. */
+    @SuppressWarnings("unchecked")
+    public Map<String, Object> thirdEntry(String name) {
+        Object entry = set.table("third").get(name);
+        if (!(entry instanceof Map)) {
+            throw new GradleException("set " + set.shortRevision() + " has no third entry " + name
+                    + " (it has: " + set.table("third").keySet() + ")");
+        }
+        return java.util.Collections.unmodifiableMap((Map<String, Object>) entry);
+    }
+
+    /** The version of a third-party entry's module (group:artifact:version). */
+    public String thirdVersion(String name) {
+        String[] parts = String.valueOf(thirdEntry(name).get("module")).split(":");
+        if (parts.length != 3) {
+            throw new GradleException("third entry " + name + " names no module version");
+        }
+        return parts[2];
+    }
+
     /** The consumer's own floor for a sibling: fails when the set's line is older than the version given. */
     public void since(String name, String version) {
         Object have = set.line(name).get("version");

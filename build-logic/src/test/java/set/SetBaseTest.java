@@ -45,6 +45,8 @@ class SetBaseTest {
                 "dependencies { compileOnly set.jar('lib') }",
                 "tasks.register('where') { def f = set.jar('lib'); doLast { println 'lib=' + f.singleFile.name } }",
                 "tasks.register('digest') { def d = set.platformDigest; doLast { println 'digest=' + d } }",
+                "tasks.register('third') { def v = set.thirdVersion('mui'); def r = set.thirdEntry('mui').files.runtime; "
+                        + "def m = set.third('mui'); doLast { println 'third=' + v + ' ' + r.take(4) + ' ' + m } }",
                 ""));
         write(project.resolve("src/main/java/demo/A.java"), "package demo; class A {}\n");
     }
@@ -67,7 +69,8 @@ class SetBaseTest {
     void writeSet(int java) throws IOException {
         write(setDir.resolve("set.json"), "{\"schema\": 1, \"projects\": {\"lib\": {\"branch\": \"main\", \"commit\": \""
                 + "a".repeat(40) + "\", \"artifacts\": {\"mod\": {\"sha256\": \"" + digest + "\", \"file\": \"lib-1.jar\","
-                + " \"glob\": \"build/libs/lib-*.jar\", \"check\": \"build\"}}}}, \"third\": {}, \"holds\": {},"
+                + " \"glob\": \"build/libs/lib-*.jar\", \"check\": \"build\"}}}}, \"third\": {\"mui\": {\"module\":"
+                + " \"com.example:mui:3.1.6\", \"files\": {\"runtime\": \"" + "b".repeat(64) + "\"}}}, \"holds\": {},"
                 + " \"platform\": {\"java\": " + java + "}, \"doctor\": {}}\n");
     }
 
@@ -114,6 +117,12 @@ class SetBaseTest {
         String first = runner("digest").build().getOutput().replaceAll("(?s).*digest=([0-9a-f]{64}).*", "$1");
         assertEquals(64, first.length());
         assertEquals(first, runner("digest").build().getOutput().replaceAll("(?s).*digest=([0-9a-f]{64}).*", "$1"));
+    }
+
+    @Test
+    void aThirdEntryGivesItsModuleVersionAndHashes() throws IOException {
+        BuildResult ok = runner("third").build();
+        assertTrue(ok.getOutput().contains("third=3.1.6 bbbb com.example:mui:3.1.6"), ok.getOutput());
     }
 
     @Test
