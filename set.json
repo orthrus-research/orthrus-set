@@ -53,7 +53,7 @@
   },
   "guidegtr": {
    "branch": "feat/build-on-orthlib",
-   "commit": "37e280bd5863b901a8ff5223e4155290d3c7c21c",
+   "commit": "3d3c1dc715c8f03e7e96dfef1c827449bb5d9b2e",
    "artifacts": {
     "mod": {
      "sha256": "4e60b7811bffea89d0efc3fc0b899f2caa28abd536b228a8a9ac1194a49fb49b",
@@ -77,24 +77,24 @@
   },
   "orthlib": {
    "branch": "main",
-   "commit": "8086e52e7a0201c536278ca810447967d3c8d958",
+   "commit": "2e4a9268f33deb1a75ad4c3f6068273ac0460f1c",
    "artifacts": {
     "mod": {
-     "sha256": "33cc66456c38e9de7638eeba5a0476ef36d19c77f517a2fab48b12efcec5be68",
+     "sha256": "155163e5124df24342a8cb5026434263c0b3eb66f259f806dbb41ce9d68e09da",
      "file": "orthlib-0.5.0-dev.jar",
      "glob": "build/libs/orthlib-*-dev.jar",
      "check": "root"
     },
     "mcp": {
-     "sha256": "4a181e85a7c16c09b869e12219d78977afff793b8b2b986f7453caa8cb085108",
+     "sha256": "9801a7b55556bc0b95a9a2a1325b1fae1d37128b096e3f54bf2a70d6315b82b7",
      "file": "orthlib-0.5.0-dev-mcp.jar",
-     "glob": "build/libs/orthlib-*-mcp.jar",
+     "glob": "build/libs/orthlib-*-dev-mcp.jar",
      "check": "root"
     },
     "sources": {
      "sha256": "dbd4b60351b87ed73511c1a64173781a0482d607ca51a9481cb21249f7d1b6b8",
      "file": "orthlib-0.5.0-dev-sources.jar",
-     "glob": "build/libs/orthlib-*-sources.jar",
+     "glob": "build/libs/orthlib-*-dev-sources.jar",
      "check": "root"
     },
     "mixinkit": {
@@ -107,10 +107,10 @@
   },
   "quadrature": {
    "branch": "main",
-   "commit": "428f4e26247f518aa1b4928cba0e2e4c0fe3096d",
+   "commit": "3b057fb8c8e722608707657ac8dbc9f99cbafc48",
    "artifacts": {
     "mod": {
-     "sha256": "0dfc705d321e668d68e2531f6c4e89460d4687d1aa04e034c10b28713277bdcc",
+     "sha256": "ec49572b4e7233b56a2c230b60cc9c89ef52cf825f2f431786ab43fb08396bbd",
      "file": "quadrature-0.1.0-dev.jar",
      "glob": "build/libs/quadrature-*-dev.jar",
      "check": "build"
