@@ -107,10 +107,10 @@
   },
   "quadrature": {
    "branch": "main",
-   "commit": "3b057fb8c8e722608707657ac8dbc9f99cbafc48",
+   "commit": "1d810744d81ec03817afae69c427f0881e0b99c4",
    "artifacts": {
     "mod": {
-     "sha256": "ec49572b4e7233b56a2c230b60cc9c89ef52cf825f2f431786ab43fb08396bbd",
+     "sha256": "ea05742d200a76b569f524dfb2873e1ca923ad6c4490e559b7dc23fca698d34f",
      "file": "quadrature-0.1.0-dev.jar",
      "glob": "build/libs/quadrature-*-dev.jar",
      "check": "build"
