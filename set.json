@@ -3,7 +3,7 @@
  "projects": {
   "cubature": {
    "branch": "main",
-   "commit": "98d87869f1101a83ce6333ebabcd7fa33ecd6c22",
+   "commit": "43f9cef1d887dfcf46a24b71ee4c928524ac8e30",
    "artifacts": {
     "mod": {
      "sha256": "9a6c1ab0a8db891c97211f7a5ba3feb62ecb7dacd750889f2fc1ef2bf25fab40",
@@ -18,7 +18,7 @@
      "check": "cleanroom"
     },
     "lab-observer": {
-     "sha256": "7be34cdbeee4b89489942a3dd6025d3479cc5372c8edc42aeec76cf21f78b2ab",
+     "sha256": "72974572d949edc517540bbbb3eea9a9416af470b05272fd512553d2daed3ece",
      "file": "cubicchunks-lab-0.1.0-cleanroom.jar",
      "glob": "lab/build/*/libs/cubicchunks-lab-*-cleanroom.jar",
      "check": "lab"
