@@ -3,16 +3,16 @@
  "projects": {
   "cubature": {
    "branch": "main",
-   "commit": "7cf1370938676f20009ea5e5697961df85a99cf8",
+   "commit": "3114e4c82039982de94ce5e1a81fea6830531177",
    "artifacts": {
     "mod": {
-     "sha256": "9a6c1ab0a8db891c97211f7a5ba3feb62ecb7dacd750889f2fc1ef2bf25fab40",
+     "sha256": "945f667e06dd446e187c229d661dc2e3cb533dfbd439f9b51cbfe057365d7a1c",
      "file": "Cubature-1.12.2-0.1.4.0-cleanroom.jar",
      "glob": "cleanroom/build/*/libs/Cubature-*-cleanroom.jar",
      "check": "cleanroom"
     },
     "sources": {
-     "sha256": "4bf9ce82af376939697619160fcbb5aa8d2b35f11b5f7313cd8c3c9c6f541354",
+     "sha256": "e419962a302af5e33e426e85e675b2988edb67e8050be07ee147d4c1e118a230",
      "file": "Cubature-1.12.2-0.1.4.0-sources.jar",
      "glob": "cleanroom/build/*/libs/Cubature-*-sources.jar",
      "check": "cleanroom"
