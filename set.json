@@ -28,22 +28,22 @@
   },
   "gtceur": {
    "branch": "feat/render-interface-release",
-   "commit": "ff45dc2cee7752ad667309a6cac6883bae9fd479",
+   "commit": "a5cf33fb795eecf43605fa703e5f852e109dd691",
    "artifacts": {
     "mod": {
-     "sha256": "a84f3ff9ac8e96110dcd61db6b92af97247558e7a83dc3b2a3a717bd36fa9970",
+     "sha256": "66b91c3dc76732da104a90a5aaca004ccdc5f3883c56e48db3a5a81b3680e620",
      "file": "gtceu-reloaded-3.0.0-reloaded.1-alpha.1.jar",
      "glob": "build/libs/gtceu-reloaded-*-alpha.1.jar",
      "check": "build"
     },
     "mcp": {
-     "sha256": "e66d7528eb7433f2e3aa4c308927954dcee072e9f06e456be14dbca0af63a058",
+     "sha256": "13ec168c18c06c0aa738aeadc1de1bbeb1fa9726f60ee2b74c2287931b693809",
      "file": "gtceu-reloaded-3.0.0-reloaded.1-alpha.1-mcp.jar",
      "glob": "build/libs/gtceu-reloaded-*-mcp.jar",
      "check": "build"
     },
     "sources": {
-     "sha256": "3a6dfdb9125a9f7dde2f393f57e717025798ab9c852c852f2b3283e7f39f6629",
+     "sha256": "e06aed62b1a1ce5f0416a2f2d2a016dac25b45fd556e2cfc2d3eefe256e06f52",
      "file": "gtceu-reloaded-3.0.0-reloaded.1-alpha.1-sources.jar",
      "glob": "build/libs/gtceu-reloaded-*-sources.jar",
      "check": "build"
