@@ -28,7 +28,7 @@
   },
   "gtceur": {
    "branch": "feat/render-interface-release",
-   "commit": "1a0207e88935504361925910cbc80c700bf5ac6f",
+   "commit": "14cf4def3728bd962891d9282ed83cbb730e5558",
    "artifacts": {
     "mod": {
      "sha256": "6533a28e6a013010d587bd8fa0f97cbb2d10dce9e6a19c7c84881566f5e8491c",
