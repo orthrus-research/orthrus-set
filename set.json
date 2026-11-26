@@ -162,6 +162,12 @@
    "source": "https://www.curseforge.com/minecraft/mc-mods/scalar-legacy/files/6842491",
    "licence": "LGPL-2.1",
    "mod_id": "scalar"
+  },
+  "wbdrive": {
+   "file": "wbdrive-0.1.0.jar",
+   "sha256": "7fceaf74dfc4bb53fa6fba0bdc893fc2bc6a67e2f496114d7f4ea5c474230f3c",
+   "source": "https://github.com/orthrus-research/WorkbenchReloaded/tree/c35bc73/mods/drive-agent, rebuilt byte for byte from that tree",
+   "licence": "Apache-2.0"
   }
  },
  "platform": {
