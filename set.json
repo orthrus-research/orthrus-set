@@ -77,7 +77,7 @@
   },
   "orthlib": {
    "branch": "main",
-   "commit": "c5bcdd42fa50d431186b84938a40149176e60da2",
+   "commit": "1fa8e64cb89ee469d52e808be268630da57682bb",
    "artifacts": {
     "mod": {
      "sha256": "6bddf095759ed671bc2e23a47b213ba1c855d1608601bf114685bc6aded839ef",
